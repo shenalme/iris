@@ -22,19 +22,20 @@ When it is right, `index.html` sits at the top level of the repository next to
 
 ## Cloudflare Pages
 
-**Workers & Pages -> Create -> Pages -> Upload assets**, name the project, drag
-in this folder or the zip as-is, deploy.
+**Workers & Pages -> Create -> Pages -> Upload assets**, drag in this folder or
+the zip as-is, deploy.
 
 ## Netlify
 
 Drag this folder onto the Sites list, or **Add new site -> Deploy manually**.
 
-## What changed in this build
+## Downloads at the end of a run
 
-Gaze is now estimated from MediaPipe FaceMesh iris landmarks with head-pose
-compensation, replacing WebGazer. The JavaScript bundle dropped from ~2.3 MB to
-~0.33 MB because TensorFlow.js is no longer needed. The `mediapipe` folder is
-the face and iris model, served from your own site - no third-party requests.
+- **CSV** - one row per estimate: gaze position and video time.
+- **Detailed CSV** - 77 columns: velocity, acceleration, fixation/saccade/blink
+  labels, iris offsets, eye openness, head pose, and 18 face landmarks.
+- **JSON** - metadata, calibration quality, drift correction and a fixation
+  summary.
 
 ## Changing the video
 
